@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go-Password | Generator</title>
+  </head>
+  <!-- استخدمنا min-h-screen لضمان تغطية الشاشة بالكامل مع إضافة padding بسيط للجوانب -->
+  <body class="bg-slate-900 text-white flex justify-center items-center min-h-screen p-4">
+    
+    <!-- الكرت: جعلنا العرض 100% للهواتف (w-full) وبحد أقصى (max-w-md) للشاشات الكبيرة -->
+    <div id="app" class="w-full max-w-md bg-slate-800 p-6 md:p-8 rounded-2xl shadow-2xl border border-slate-700">
+      
+      <h1 class="text-2xl font-bold mb-6 text-center text-violet-400">Password Generator</h1>
+
+      <div class="flex flex-col gap-4">
+        <!-- حقل الإدخال: تحسين التصميم ليكون أسهل في اللمس على الهاتف -->
+        <div class="flex flex-col gap-2">
+          <label for="num" class="text-sm text-slate-400 ml-1">Password Length</label>
+          <input type="number" id="num" placeholder="E.g. 12" 
+            class="w-full bg-slate-900 border border-slate-600 rounded-lg py-3 px-4 outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all text-lg">
+        </div>
+
+        <!-- الزر: جعلناه يأخذ العرض كاملاً لسهولة الضغط عليه -->
+        <button class="w-full py-3 px-6 bg-violet-600 hover:bg-violet-500 active:scale-[0.98] transition-transform rounded-lg font-semibold text-white shadow-lg shadow-violet-900/20">
+          Generate Password
+        </button>
+
+        <!-- منطقة النتيجة: تصميم صندوق مع زر النسخ -->
+        <div id="result" class="mt-4 p-4 bg-slate-900/50 border border-dashed border-slate-600 rounded-lg flex justify-between items-center group">
+          <span class="text-slate-300 font-mono break-all" id="password-display">Your password</span>
+          
+          <!-- هذا هو زر النسخ -->
+          <button title="Copy to clipboard" class="ml-2 text-slate-500 hover:text-violet-400 transition-colors p-1">
+            <!-- أيقونة "النسخ" (ورقتين فوق بعض) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
